@@ -1,3 +1,5 @@
+create database cake_bookmarks CHARACTER SET utf8;
+use cake_bookmarks;
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
