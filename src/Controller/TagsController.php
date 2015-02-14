@@ -32,7 +32,7 @@ class TagsController extends AppController
     public function view($id = null)
     {
         $tag = $this->Tags->get($id, [
-            'contain' => ['Bookmarks', 'BookmarksTags']
+            'contain' => ['Bookmarks']
         ]);
         $this->set('tag', $tag);
         $this->set('_serialize', ['tag']);
@@ -103,5 +103,16 @@ class TagsController extends AppController
             $this->Flash->error('The tag could not be deleted. Please, try again.');
         }
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->params['action'];
+
+        // The add and index actions are always allowed.
+        if (in_array($action, ['index', 'add', 'edit', 'view', 'delete'])) {
+            return true;
+        }
+        return parent::isAuthorized($user);
     }
 }
