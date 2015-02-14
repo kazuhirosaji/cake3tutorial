@@ -27,4 +27,5 @@ configuration relevant for your application.
 
 ## Comment
 This program is refering Cakephp3 tutorial.
-http://book.cakephp.org/3.0/en/tutorials-and-examples/bookmarks/
+
+http://book.cakephp.org/3.0/en/tutorials-and-examples/bookmarks/intro.html
